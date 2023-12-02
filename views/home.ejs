@@ -1,0 +1,79 @@
+<%- include('layouts/header'); -%>
+<body>
+  <%- include('layouts/head'); -%> <%- include('layouts/nav');-%>
+  <div class="background">
+    <img class="image" src="images/background.jpg" />
+    <p id="para">
+      "Be a hero in someone's life—consider organ donation. Your selfless act
+      can bring hope, healing, and a second chance to those in need. Together,
+      let's make a difference that lasts beyond a lifetime."
+    </p>
+    <a href="/form" id="sign"
+      ><button class="log">Book Your Donation</button></a
+    >
+  </div>
+  <div class="why">
+    <h1>Why organ donation?</h1>
+    <div class="row">
+      <div class="column" style="background-color: #45ce306a">
+        <h2>Purpose of Organ Donation</h2>
+        <p style="word-spacing: 5px">
+          One organ donor can save up to 8 lives. Tissue and eye donors can
+          improve the lives of up to 75 more. Organ donation is a life-saving
+          act. Transplants can be the only hope for individuals suffering from
+          organ failure due to diseases, accidents, or congenital conditions.
+        </p>
+      </div>
+      <div class="column" style="background-color: #43be316a">
+        <h2>Who can be an organ donor?</h2>
+        <p>
+          Almost everyone is a potential organ or tissue donor. There is no
+          official age limit, and most people have healthy parts left even when
+          disease has affected other parts. Organ donors let the experts decide
+          which of their parts are viable for donation and transplantation. They
+          will assess the health of your organs and tissues at the time that
+          they become available.
+        </p>
+      </div>
+      <div class="column" style="background-color: #0190316a">
+        <h2>Tell us Story</h2>
+        <p>
+          Everyone’s experience is different, and you may find sharing your
+          story can be an empowering experience and an inspirational resource
+          for others. By telling your story, you will help raise awareness.
+        </p>
+        <p><strong>Share Your Story</strong></p>
+        <ul>
+          <li>Record your story and send at liferenewalhub@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="video-container">
+      <div class="content">
+        <h3>Learn from lived experience</h3>
+        <p>
+          A 13-year-old Ontario girl is looking forward to a bright future after
+          a lifesaving transplant made possible by a special program for living
+          organ donors ― and a very selfless former babysitter.
+        </p>
+        <button class="log">Browse the entire library</button>
+      </div>
+      <div class="video">
+        <iframe
+          width="100%"
+          height="400px"
+          src="https://www.youtube.com/embed/vlQGHX8wL8Y"
+          title="Girl receives lifesaving kidney during pandemic, thanks to former babysitter"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <%- include('layouts/footer');-%>
+</body>

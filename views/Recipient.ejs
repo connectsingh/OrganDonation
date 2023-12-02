@@ -1,0 +1,58 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <%- include('layouts/head'); -%>
+    <%- include('layouts/nav'); -%>
+    
+    <script>
+        const formData = "<%= formData%>";
+        if(formData) {
+            window.alert("Received")
+        }
+    </script>
+  <div class="form">
+    <!--  LIFE RENEWAL HUB  -->
+    <h1>Organ Recipient Information</h1>
+    
+    <form action="/recipient" method="post">
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" required><br><br>
+        
+        <h2>Medical Information</h2>
+        
+        <label for="organNeeded">Organ Needed:</label>
+        <input type="text" id="organNeeded" name="organNeeded" required><br><br>
+        
+        <label for="bloodType">Blood Type:</label>
+        <input type="text" id="bloodType" name="bloodType" required><br><br>
+        
+        <label for="medicalCondition">Current Medical Condition:</label>
+        <textarea id="medicalCondition" name="medicalCondition" rows="4" cols="50" required></textarea><br><br>
+        
+        
+        <h2>Additional Information</h2>
+        
+        <label for="message">Additional Message:</label>
+        <textarea id="textarea" name="message" rows="4" cols="50"></textarea><br><br>
+        
+      
+        <button type="reset" class="danger">Clear</button>
+        <button type="submit">Submit</button>
+    </form>
+    <%- include('layouts/footer');-%>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<%- include('layouts/header'); -%>
+
+<body>
+  <%- include('layouts/head'); -%> <%- include('layouts/nav'); -%>
+  <h1>Real Life Stories</h1>
+  <div id="stories-container"></div>
+  <button id="shareYourStoryButton">Share Your Story</button>
+
+  <script>
+    // Example data 
+    const storiesData = [
+      {
+        title: "A Second Chance",
+        image: "/images/img1.png",
+        content:
+          "After a life-changing accident, Emily received a second chance at life through a heart transplant. This is the story of her remarkable journey and the gratitude she feels towards her donor and their family.",
+      },
+      {
+        title: "The Gift of Sight",
+        image: "/images/img2.jpg",
+        content:
+          "Alex, who was blind since birth, regained sight through a cornea transplant. Explore the emotional rollercoaster of experiencing the world for the first time and the deep connection formed with the donor's family.",
+      },
+      {
+        title: "Unbreakable Bonds",
+        image: "/images/img3.jpg",
+        content:
+          "Two strangers connected by tragedy - the story of Sam, a young man who became a living kidney donor to save his sister, Sarah. Follow their journey of sacrifice, love, and the unbreakable bond that organ donation created.",
+      },
+      // Add more stories as needed
+    ];
+
+    // Function to create a story card
+    function createStoryCard(story) {
+      const card = document.createElement("div");
+      card.classList.add("story-card");
+
+      const image = document.createElement("img");
+      image.src = story.image;
+      image.alt = story.title;
+      image.classList.add("story-image");
+
+      const title = document.createElement("h2");
+      title.textContent = story.title;
+
+      const content = document.createElement("p");
+      content.textContent = story.content;
+
+      card.appendChild(image);
+      card.appendChild(title);
+      card.appendChild(content);
+
+      return card;
+    }
+
+    // Function to display stories on the page
+    function displayStories() {
+      const storiesContainer = document.getElementById("stories-container");
+
+      storiesData.forEach((story) => {
+        const storyCard = createStoryCard(story);
+        storiesContainer.appendChild(storyCard);
+      });
+    }
+
+    // Function to handle "Share Your Story" button click
+    function handleShareYourStoryClick() {
+      // Redirect to the "addStory" page
+      window.location.href = "/addStory";
+    }
+
+    // Display stories when the page is loaded
+    window.onload = function () {
+      displayStories();
+
+      // Add event listener for "Share Your Story" button
+      document.getElementById("shareYourStoryButton").addEventListener("click", handleShareYourStoryClick);
+    };
+  </script>
+  <%- include('layouts/footer');-%>
+</body>
