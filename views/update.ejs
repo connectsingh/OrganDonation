@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Life Renewal Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <link rel="shortcut icon" href="../public/images/logo.jpg" type="image/jpg" />
+  </head>
+</html>
+<body>
+    <div class="header">
+        <img class="logo" src="images/logo.jpg">
+        <h1>Life Renewal Hub</h1>
+    </div>
+    <%- include('layouts/adminNav'); -%>
+
+    <div class="form">
+        <form action="/admin" method="post" name="form-field">
+            <br>
+            <label for="name">Full Name: </label>
+            <input type="text" class="form-input" name="name" value="<%= donor.name %>"><br>
+            
+            <label for="email">Email: </label>
+            <input type="email" class="form-input" name="email" value="<%= donor.email %>"><br>
+            
+            <label for="phone">Phone Number: </label>
+            <input type="tel" class="form-input" name="phone" value="<%= donor.phone %>"><br>
+            
+            <label for="type">Organ Type: </label>
+            <select name="type" id="type">
+                <option value="heart" <%= donor.type === 'heart' ? 'selected' : '' %>>Heart</option>
+                <option value="liver" <%= donor.type === 'liver' ? 'selected' : '' %>>Liver</option>
+                <option value="kidney" <%= donor.type === 'kidney' ? 'selected' : '' %>>Kidney</option>
+            </select><br>
+            
+            <label for="donationPreference">Donation Preference: </label>
+            <input type="radio" id="donationPreferenceLiving" name="donationPreference" value="living" <%= donor.donationPreference === 'living' ? 'checked' : '' %>>
+            <label for="donationPreferenceLiving">Living Donation</label>
+            
+            <input type="radio" id="donationPreferenceDeceased" name="donationPreference" value="deceased" <%= donor.donationPreference === 'deceased' ? 'checked' : '' %>>
+            <label for="donationPreferenceDeceased">Deceased Donation</label><br>
+            
+            <label for="message">Additional Message: </label>
+            <textarea name="message" id="message" cols="30" rows="10"><%= donor.message %></textarea><br>
+            
+            <input type="submit" value="Update">
+        </form> 
+    </div>
+    
+</body>
+</html>

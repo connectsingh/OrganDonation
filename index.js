@@ -177,19 +177,37 @@ myApp.post("/login", (req, res) => {
       console.log(`Error: ${err}`);
     });
 });
+//Edit Page
+myApp.get('/editPage', (req, res) => {
+  if (req.session.userLoggedIn) {
+    Donor.find({}).then((editData) => {
+      res.render('editPage', { editData });
+    }).catch(function (error) {
+      console.log(`Error fetching edit donor data: ${error}`);
+      res.render('editPage', { editData: [] });
+    });
+  } else {
+    res.redirect('/home');
+  }
+});
+
+//add new User
+myApp.get("/adminAddUserForm", (req, res) => {
+  res.render("adminAddUserForm", { formData: undefined });
+});
 // Update Page
 myApp.get("/update/:id", (req, res) => {
   if (req.session.userLoggedIn) {
     var id = req.params.id;
     console.log(`Update Id: ${id}`);
-    addPage
+    Donor
       .findById({ _id: id })
-      .then((addpage) => {
-        console.log(`Update Object: ${addpage}`);
-        if (addpage) {
-          res.render("update", { addpage: addpage });
+      .then((donor) => {
+        console.log(`Update Object: ${donor}`);
+        if (donor) {
+          res.render("update", { donor: donor });
         } else {
-          res.send("No order found with this Id!");
+          res.send("No data found with this Id!");
         }
       })
       .catch((err) => {
@@ -206,11 +224,11 @@ myApp.get("/delete/:id", (req, res) => {
   if (req.session.userLoggedIn) {
     var id = req.params.id;
     console.log(`Deleted Object Id: ${id}`);
-    addPage
+    Donor
       .findByIdAndDelete({ _id: id })
-      .then((addPage) => {
-        console.log(`Deleted Object: ${addPage}`);
-        if (addPage) {
+      .then((donor) => {
+        console.log(`Deleted Object: ${donor}`);
+        if (donor) {
           res.render("delete", {
             message: "Record Deleted Successfully...!!!",
           });

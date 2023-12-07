@@ -329,6 +329,7 @@ hr {
   background-color: #0056b3;
 }
 #stories-container {
+  margin-left: 250px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -353,7 +354,6 @@ hr {
   border-radius: 4px;
   margin-bottom: 10px;
 }
-
 input,
 textarea {
   background: white;

@@ -1,0 +1,37 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <%- include('layouts/head'); -%>
+    <%- include('layouts/adminNav'); -%>
+    
+    <div class="edit">
+        <h1>Edit Donors</h1>
+        <table class="center">
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Organ Type</th>
+                <th>Donation Preference</th>
+                <th>Additional Message</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            <% for (let donor of editData) { %>
+                <tr>
+                    <td><%= donor.name %></td>
+                    <td><%= donor.email %></td>
+                    <td><%= donor.phone %></td>
+                    <td><%= donor.type %></td>
+                    <td><%= donor.donationPreference %></td>
+                    <td><%= donor.message %></td>
+                    <td><a href="/update/<%= donor._id %>">Edit</a></td>
+                    <td><a href="/delete/<%= donor._id %>">Delete</a></td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+
+    <%- include('layouts/footer'); -%>
+</body>
+</html>
