@@ -118,8 +118,8 @@ myApp.post("/recipient", (req, res) => {
 myApp.get("/", (req, res) => {
   res.render("home");
 });
-myApp.get("/login", (req, res) => {
-  res.render("login");
+myApp.get("/Login", (req, res) => {
+  res.render("Login");
 });
 myApp.get("/form", (req, res) => {
   res.render("form", { formData: undefined });
