@@ -20,7 +20,7 @@ myApp.use(express.json());
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    "mongodb://127.0.0.1:27017/Project",
+    "mongodb+srv://chamandeepsingh019980:gVyTnYjy7dUHVqmW@cluster0.tbsjuvu.mongodb.net/?retryWrites=true&w=majority/organ_donation",
     {
       UseNewURLParser: true,
       UseUnifiedTopology: true,
