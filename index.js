@@ -215,7 +215,7 @@ myApp.get("/update/:id", (req, res) => {
       });
   } else {
     // Otherwise, redirect user to Login page
-    res.redirect("/login");
+    res.redirect("/Login");
   }
 });
 
@@ -243,7 +243,7 @@ myApp.get("/delete/:id", (req, res) => {
       });
   } else {
     // Otherwise, redirect user to Login page
-    res.redirect("/login");
+    res.redirect("/Login");
   }
 });
 // Logout Page
